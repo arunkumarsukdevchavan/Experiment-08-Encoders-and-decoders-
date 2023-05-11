@@ -56,22 +56,65 @@ D7 = X Y Z
 
 ### Procedure
 /* write all the steps invloved */
+Procedure
+Step 1:
+Create module encoder and decoder.
 
+Step 2:
+Get inputs and outputs for encoders and decoders.
+
+Step 3:
+Perform "or" operation for encoder and "and" logic for decoders.
+
+Step 4:
+Perform RTL LOGIC and get waveform.
+
+Step-5:
+End the module.
 
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: ARUN KUMAR SUKDEV CHAVAN
+RegisterNumber:  212222230013
 */
+ENCODER:
+```
+module EX8(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+DECODER:
+```
+module EX8(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+```
 
 
 
 
 
 
-### RTL LOGIC  
+### RTL LOGIC  :
+### ENCODER:
+![output](https://github.com/srikarthickeyanganapathy/Experiment-08-Encoders-and-decoders-/raw/main/Screenshot%20(130).png)
+### DECODER:
+![output](https://github.com/srikarthickeyanganapathy/Experiment-08-Encoders-and-decoders-/raw/main/Screenshot%202023-01-28%20205527.jpg)
 
 
 
@@ -80,17 +123,25 @@ RegisterNumber:
 
 
 
-### TIMING DIGRAMS  
+
+### TIMING DIGRAMS:
+### ENCODER:
+![output](https://github.com/srikarthickeyanganapathy/Experiment-08-Encoders-and-decoders-/raw/main/Screenshot%20(131).png)
+### DECODER:
+![output](https://github.com/srikarthickeyanganapathy/Experiment-08-Encoders-and-decoders-/raw/main/Screenshot%202023-01-28%20205802.jpg)
+
+
+
+
+### TRUTH TABLE :
+### ENCODER:
+![output](https://github.com/srikarthickeyanganapathy/Experiment-08-Encoders-and-decoders-/raw/main/encodertt.png)
+### DECODER:
+![output](https://github.com/srikarthickeyanganapathy/Experiment-08-Encoders-and-decoders-/raw/main/decodertt.png)
 
 
 
 
 
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+### RESULTS :
+Thus the program to implement encoder and decoder using verilog is verified.
